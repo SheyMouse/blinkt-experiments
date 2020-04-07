@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 
 '''
 A very basic script to take a user's input and display their chosen colour.
@@ -10,7 +10,7 @@ import time
 
 blinkt.clear()
 print("Hello. I'm Pi. What is your name?")
-pers = input(">>> ")
+pers = str(input(">>> "))
 time.sleep(1)
 print("Nice to meet you " + pers + "!")
 
@@ -56,7 +56,12 @@ while True:
     elif ledcolour == "pink":
         print("255, 0, 128")
         blinkt.clear()
-        blinkt.set_all(255, 0, 128, 1.0)
+        blinkt.set_all(255, 0, 128, 0.5)
+        blinkt.show()
+    elif ledcolour == "off":
+        print("Bye!")
+        blinkt.clear()
+        #blinkt.set_all(0, 0, 0, 1.0)
         blinkt.show()
     else:
         print("I don't know that colour")
